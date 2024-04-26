@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="stylesheet" href="todo.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <main>
+      <section>
+        <article class="header">
+          <h1>Todo</h1>
+          <p class="icon-back"></p>
+        </article>
+        <article>
+          <div class="input-cont">
+            <input type="text" id="todo-input" required />
+            <label for="todo-input" class="input-placeholder">
+              <span class="checkbox"></span> <span>current typing...</span>
+            </label>
+          </div>
+        </article>
+
+        <article class="todo-body">
+          <ul>
+            <!-- <li class="todo-item checked" draggable="true">
+              <span class="checkbox" tabindex="0"></span>
+              <span class="todo">done</span>
+              <span class="cross"></span>
+            </li>
+            <li class="todo-item" draggable="true">
+              <span class="checkbox" tabindex="0"></span>
+              <span>done</span>
+              <span class="cross"></span>
+            </li>
+            <li class="todo-item" draggable="true">
+              <span class="checkbox"></span>
+              <span>done</span>
+              <span class="cross"></span>
+            </li>
+            <li class="todo-item" draggable="true">
+              <span class="checkbox"></span>
+              <span>done</span>
+              <span class="cross"></span>
+            </li>
+            <li class="todo-item" draggable="true">
+              <span class="checkbox"></span>
+              <span>done</span>
+              <span class="cross"></span>
+            </li>
+            <li class="todo-item" draggable="true">
+              <span class="checkbox"></span>
+              <span>done</span>
+              <span class="cross"></span>
+            </li> -->
+          </ul>
+          <article class="todo-foot">
+            <p class="" id="todo-left"></p>
+            <div class="btns">
+              <button class="all-btn active btn">All</button>
+              <button class="active-btn btn">Active</button>
+              <button class="completed-btn btn">Completed</button>
+            </div>
+            <button class="clear-btn">Clear Completed</button>
+          </article>
+        </article>
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Peter</a>.
+    </footer>
+    <!-- Drag and drop to reorder list -->
+
+    <script src="todo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+:root,
+:root.light {
+  --todo-text: hsl(235, 19%, 35%);
+  --todo-acive-text: hsl(236, 9%, 61%);
+  --todo-completed: hsl(236, 9%, 61%);
+
+  --line: hsl(233, 11%, 84%);
+  --btn-color: hsl(236, 9%, 61%);
+  --active-btn: hsl(220, 98%, 61%);
+  --btn-hover: hsl(235, 19%, 35%);
+  --todo-bg: hsl(0, 0%, 98%);
+
+  --main-bg: hsl(0, 0%, 98%);
+  --main-img: url(./images/bg-desktop-light.jpg);
+  --icon-img: url(./images/icon-moon.svg);
+}
+
+:root.dark {
+  --line: hsl(235, 24%, 19%);
+  --btn-color: hsl(233, 14%, 35%);
+  --active-btn: hsl(220, 98%, 61%);
+  --btn-hover: hsl(234, 39%, 85%);
+  --todo-bg: hsl(237, 14%, 26%);
+  --todo-text: hsl(234, 39%, 85%);
+  --main-bg: hsl(235, 21%, 11%);
+  --main-img: url(./images/bg-desktop-dark.jpg);
+  --icon-img: url(./images/icon-sun.svg);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-bg);
+  font-family: 'Josefin Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+main {
+  background-image: var(--main-img);
+  background-repeat: no-repeat;
+  padding-top: 5em;
+  background-size: 100% 45%;
+  min-height: 90vh;
+}
+section {
+  width: 400px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.header .icon-back {
+  width: 28px;
+  aspect-ratio: 1;
+  background-image: var(--icon-img);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+/**********************/
+
+/***************/
+input {
+  border: 1 px solid;
+  border-radius: 5px;
+  padding: 0.8em;
+  width: 100%;
+  margin-bottom: 1.2em;
+}
+input:focus {
+  border: 1px solid var(--line);
+  outline: none;
+}
+.input-cont {
+  position: relative;
+}
+input:valid + .input-placeholder {
+  display: none;
+}
+.input-placeholder {
+  color: var(--todo-text);
+}
+
+.input-cont label {
+  position: absolute;
+  top: 0.7em;
+  left: 1em;
+}
+
+.todo-body {
+  box-shadow: 0px 3px 10px 0px rgb(27, 27, 27);
+  border-radius: 5px;
+  background-color: var(--todo-bg);
+}
+/*****todo-item****/
+ul {
+  border-radius: 5px;
+}
+.todo-item {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding: 0.7em;
+  color: var(--todo-text);
+}
+.todo-item span {
+  background-repeat: no-repeat;
+}
+
+.checkbox {
+  width: 20px;
+  border: 1px solid;
+  border-color: var(--line);
+  border-radius: 50%;
+}
+.checkbox:active {
+  border: 1px solid red;
+}
+.todo-item.checked .checkbox {
+  background-image: url(./images/icon-check.svg),
+    linear-gradient(90deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-position: center;
+}
+.todo-item.checked .todo {
+  text-decoration: line-through;
+  color: var(--btn-color);
+}
+
+.todo-item .cross {
+  background-image: url(./images/icon-cross.svg);
+  width: 20px;
+  visibility: hidden;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.todo-item:hover .cross {
+  visibility: visible;
+}
+/**************ALL THE BTNS*****/
+
+.todo-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.6em;
+}
+#todo-left {
+  font-size: 1rem;
+  color: var(--btn-color);
+}
+.btns {
+  align-items: center;
+  font-size: 1.2rem;
+}
+.btns button {
+  padding: 0.2em;
+}
+.btns button.active {
+  color: var(--active-btn);
+}
+button {
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--btn-color);
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  color: var(--btn-hover);
+}
+
+.attribution {
+  margin-top: 1em;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+/****dark mode***/
+
+:root.dark .attribution {
+  color: hsl(236, 33%, 92%);
+}
+:root.dark .attribution a {
+  color: rgb(250, 26, 231);
+}
+:root.dark input {
+  background-color: var(--main-bg);
+  color: var(--todo-text);
+}
+:root.dark .btns .active:hover {
+  color: hsl(236, 33%, 92%);
+}
+/****************MOBILE STYLING*********************/
+
+@media screen and (width < 410px) {
+  :root {
+    --main-img: url(./images/bg-mobile-light.jpg);
+  }
+  :root.dark {
+    --main-img: url(./images/bg-mobile-dark.jpg);
+  }
+  section {
+    width: 320px;
+    margin: 0 auto;
+  }
+  .todo-item .cross {
+    visibility: visible;
+  }
+  .attribution {
+    font-size: 1rem;
+  }
+  /*******MOVILE DARK*****/
+}
